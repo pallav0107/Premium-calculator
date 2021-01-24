@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Premium Calculator</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="profileForm">
+                        <div class="form-group">
+                            <label>
+                                Name:
+                                <input type="text" formControlName="name" required>
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="(profileFormControl.name.touched) && profileFormControl.name.errors?.required">
+                                Name is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Age:
+                                <input type="number" min="0" formControlName="age" required>
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="(profileFormControl.age.touched) && profileFormControl.age.errors?.required">
+                                Age is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Date of Birth:
+                                <input type="date" formControlName="dob" required>
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="(profileFormControl.dob.touched) && profileFormControl.dob.errors?.required">
+                                Date of birth is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Death – Sum Insured:
+                                <input type="number" min="0" formControlName="sumInsured" required>
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="(profileFormControl.sumInsured.touched) && profileFormControl.sumInsured.errors?.required">
+                                Sum Insured is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <select (change)="calculatePremium($event)" formControlName="occupationOptions">
+                                <option value="" disabled>Choose your occupation</option>
+                                <option *ngFor="let occupation of occupationList" [value]="occupation.occupationId">
+                                    {{occupation.occupation}}
+                                </option>
+                            </select>
+
+                            <span class="text-danger"
+                                *ngIf="(profileFormControl.occupationOptions.touched) && profileFormControl.occupationOptions.errors?.required">
+                                Occupation selection is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <span>
+                                <h2>Total Premium: <h3>{{calculatedPremium | currency}}</h3>
+                                </h2>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

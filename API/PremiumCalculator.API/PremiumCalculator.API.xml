@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PremiumCalculator.API</name>
+    </assembly>
+    <members>
+        <member name="F:PremiumCalculator.API.Controllers.PremiumCalcController.configuration">
+            <summary>
+            The configuration
+            </summary>
+        </member>
+        <member name="F:PremiumCalculator.API.Controllers.PremiumCalcController.calcService">
+            <summary>
+            Cart Api Service
+            </summary>
+        </member>
+        <member name="M:PremiumCalculator.API.Controllers.PremiumCalcController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,PremiumCalculator.API.Services.Interface.ICalculatorService)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="configuration"></param>
+            <param name="calcService"></param>
+        </member>
+        <member name="M:PremiumCalculator.API.Controllers.PremiumCalcController.GetOccupations">
+            <summary>
+            Returns list of Occupations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Controllers.PremiumCalcController.ProcessCheckoutOrder(PremiumCalculator.API.Models.CalculatorModel.CustomerModel)">
+            <summary>
+            Calculates the premium based on the customer input request data
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PremiumCalculator.API.Mapping.CalculatorMappingProfile">
+            <summary>
+            Mapping profile to map models
+            </summary>
+        </member>
+        <member name="T:PremiumCalculator.API.Models.CalculatorModel.OccupationModel">
+            <summary>
+            Occupation model
+            </summary>
+        </member>
+        <member name="T:PremiumCalculator.API.Models.CalculatorModel.CustomerModel">
+            <summary>
+            Customer model
+            </summary>
+        </member>
+        <member name="M:PremiumCalculator.API.Repository.Implementation.CalculatorRepository.#ctor(PremiumCalculator.DAL.Databases.TALContext,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:PremiumCalculator.API.Repository.Implementation.CalculatorRepository.GetOccupationList">
+            <summary>
+            Method providing list of occupations from database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Repository.Implementation.CalculatorRepository.GetRatingFactor(System.Int32)">
+            <summary>
+            Method to get the rate factor based on the occupation
+            </summary>
+            <param name="occupationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Repository.Interface.ICalculatorRepository.GetOccupationList">
+            <summary>
+            Method providing list of occupations from database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Repository.Interface.ICalculatorRepository.GetRatingFactor(System.Int32)">
+            <summary>
+            Method to get the rate factor based on the occupation
+            </summary>
+            <param name="occupationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Services.Implementation.CalculatorService.#ctor(PremiumCalculator.API.Repository.Interface.ICalculatorRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:PremiumCalculator.API.Services.Implementation.CalculatorService.CalculatePremium(PremiumCalculator.API.Models.CalculatorModel.CustomerModel)">
+            <summary>
+            Service method to calculate the premium 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Services.Implementation.CalculatorService.GetOccupationList">
+            <summary>
+            Service method to retreive list of occupation
+            </summary>
+            <returns>list of type <see cref="T:PremiumCalculator.API.Models.CalculatorModel.OccupationModel"/></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Services.Interface.ICalculatorService.GetOccupationList">
+            <summary>
+            Gets the list of Occupation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PremiumCalculator.API.Services.Interface.ICalculatorService.CalculatePremium(PremiumCalculator.API.Models.CalculatorModel.CustomerModel)">
+            <summary>
+            Service method to retreive list of occupation
+            </summary>
+            <returns>list of type <see cref="T:PremiumCalculator.API.Models.CalculatorModel.OccupationModel"/></returns>
+        </member>
+    </members>
+</doc>
